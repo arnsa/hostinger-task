@@ -12,11 +12,18 @@ export const App = () => {
         columns={[
           { key: 'firstName', title: 'First Name' },
           { key: 'lastName', title: 'Last Name' },
+          { key: 'age', title: 'Age' },
         ]}
         items={[
-          { id: 1, firstName: 'A', lastName: 'A' },
-          { id: 2, firstName: 'B', lastName: 'B' },
-          { id: 3, firstName: 'C', lastName: 'C' },
+          {
+            id: 1, firstName: 'A', lastName: 'A', age: 24,
+          },
+          {
+            id: 2, firstName: 'B', lastName: 'B', age: 24,
+          },
+          {
+            id: 3, firstName: 'C', lastName: 'C', age: 24,
+          },
         ]}
         onCellClick={setCellData}
       />
