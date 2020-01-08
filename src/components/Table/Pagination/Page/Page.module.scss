@@ -1,0 +1,23 @@
+.root {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  padding: 2px 14px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &.active {
+    color: #fff;
+    background-color: #6751c1;
+  }
+
+  &.disabled {
+    cursor: initial;
+  }
+}
