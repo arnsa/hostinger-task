@@ -26,6 +26,7 @@
     }],
     "react/state-in-constructor": "off",
     "react/static-property-placement": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-one-expression-per-line": "off",
     "jsx-a11y/anchor-is-valid": ["error", {
       "components": [ "Link" ],
