@@ -11,11 +11,13 @@ export const Table = ({
   columns,
   rowKey,
   onChange,
+  onCellClick,
 }) => {
   const [sorter, setSorter] = useState({
     order: null,
     column: null,
   });
+  const [clickedRowIndex, setClickedRowIndex] = useState(null);
   const handleSortChange = ({ order, column }) => {
     const sorter = { order, column };
 
@@ -62,14 +64,23 @@ export const Table = ({
         </div>
       )}
 
-      {(!error && !isLoading) && (items.map((item) => (
-        <div key={item[uniqueRowKey]} className={styles.tableRow}>
+      {(!error && !isLoading) && (items.map((item, rowIndex) => (
+        <div
+          key={item[uniqueRowKey]}
+          className={classnames(styles.tableRow, rowIndex === clickedRowIndex && styles.tableRowClicked)}
+        >
           {columns.map((column) => (
-            <div key={column.key} className={styles.tableRowCell}>
-              <div className={styles.tableCell}>
-                {item[column.key] === null ? '-' : item[column.key]}
-              </div>
-            </div>
+            <button
+              key={column.key}
+              type="button"
+              className={styles.tableCell}
+              onClick={() => {
+                setClickedRowIndex(rowIndex);
+                onCellClick({ item, column });
+              }}
+            >
+              {item[column.key] === null ? '-' : item[column.key]}
+            </button>
           ))}
         </div>
       )))}
@@ -84,6 +95,7 @@ Table.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   onChange: PropTypes.func,
+  onCellClick: PropTypes.func,
 };
 
 Table.defaultProps = {
@@ -91,6 +103,7 @@ Table.defaultProps = {
   rowKey: null,
   isLoading: false,
   onChange: () => null,
+  onCellClick: () => null,
 };
 
 export default Table;

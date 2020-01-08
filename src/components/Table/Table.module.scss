@@ -26,23 +26,24 @@
   border-bottom: 1px solid #cccccc;
 }
 
-.tableRowCell {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: flex-start;
-  border-right: 1px solid #cccccc;
-
-  &:last-of-type {
-    border-right-width: 0;
-  }
+.tableRowClicked {
+  background-color: rgba(103, 81, 193, 0.25);
 }
 
 .tableCell {
-  flex: 1;
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: flex-start;
   padding: 0 10px;
   font-size: 14px;
+  border: 0;
+  border-right: 1px solid #cccccc;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+
+  &:last-of-type {
+    border-right-width: 0;
+  }
 }
