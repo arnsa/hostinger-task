@@ -1,0 +1,48 @@
+
+.root {
+  box-shadow: 0px 4px 18px -4px rgba(0, 0, 0, 0.75);
+}
+
+.placeholder {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error {
+  color: #f00000;
+}
+
+.tableHeader {
+  display: flex;
+}
+
+.tableRow {
+  display: flex;
+  outline: none;
+  min-height: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #cccccc;
+}
+
+.tableRowCell {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 1px solid #cccccc;
+
+  &:last-of-type {
+    border-right-width: 0;
+  }
+}
+
+.tableCell {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
+  font-size: 14px;
+}

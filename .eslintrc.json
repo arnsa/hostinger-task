@@ -24,6 +24,8 @@
     "react/jsx-filename-extension": ["error", {
       "extensions": [".js", ".jsx"]
     }],
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off",
     "react/jsx-one-expression-per-line": "off",
     "jsx-a11y/anchor-is-valid": ["error", {
       "components": [ "Link" ],

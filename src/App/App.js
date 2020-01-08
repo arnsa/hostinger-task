@@ -1,9 +1,20 @@
 import React from 'react';
-import './App.scss';
+import Table from '../components/Table';
+import styles from './App.module.scss';
 
 export const App = () => (
-  <div className="root">
-    <h1>App.js</h1>
+  <div className={styles.root}>
+    <Table
+      columns={[
+        { key: 'firstName', title: 'First Name' },
+        { key: 'lastName', title: 'Last Name' },
+      ]}
+      items={[
+        { id: 1, firstName: 'A', lastName: 'A' },
+        { id: 1, firstName: 'B', lastName: 'B' },
+        { id: 1, firstName: 'C', lastName: 'C' },
+      ]}
+    />
   </div>
 );
 
