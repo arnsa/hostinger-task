@@ -7,9 +7,7 @@ import styles from './Page.module.scss';
 export const Page = ({ page, currentPage, onClick }) => {
   if (page === PAGES.LEFT || page === PAGES.RIGHT) {
     return (
-      <span
-        className={classnames(styles.page, styles.disabled)}
-      >
+      <span className={classnames(styles.page, styles.disabled)}>
         ...
       </span>
     );
