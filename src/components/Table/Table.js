@@ -14,7 +14,6 @@ export const Table = ({
   rowKey,
   totalItems,
   limit,
-  initialLimit,
   onChange,
   onCellClick,
   onLimitChange,
@@ -38,7 +37,7 @@ export const Table = ({
     setClickedRowIndex(null);
   };
   const handleLimitChange = (limit) => {
-    onLimitChange({ sorter, page, limit });
+    onLimitChange({ sorter, page, limit: parseInt(limit, 10) });
     setPage(1);
     setClickedRowIndex(null);
   };
@@ -46,70 +45,84 @@ export const Table = ({
 
   return (
     <div className={styles.root}>
-      <div className={styles.tableHeader}>
-        {columns.map((column) => (
-          <TableHeaderCell
-            key={column.key}
-            sorter={column.sorter}
-            order={sorter.column === column.key ? sorter.order : null}
-            onSort={(order) => handleSortChange({
-              order,
-              column: column.key,
-            })}
-          >
-            {column.title}
-          </TableHeaderCell>
-        ))}
-      </div>
-
-      {isLoading && (
-        <div className={styles.placeholder}>
-          <span>Loading...</span>
-        </div>
-      )}
-
-      {(!isLoading && error) && (
-        <div className={classnames(styles.placeholder, styles.error)}>
-          <span>{error}</span>
-        </div>
-      )}
-
-      {(!isLoading && !error && !items.length) && (
-        <div className={styles.placeholder}>
-          <span>
-            There are no items
-          </span>
-        </div>
-      )}
-
-      {(!error && !isLoading) && (items.map((item, rowIndex) => (
-        <div
-          key={item[uniqueRowKey]}
-          className={classnames(styles.tableRow, rowIndex === clickedRowIndex && styles.tableRowClicked)}
+      <div className={styles.limit}>
+        <select
+          name="limit"
+          value={limit}
+          className={styles.limitSelect}
+          onChange={(event) => handleLimitChange(event.target.value)}
         >
+          <option value={5}>5</option>
+          <option value={10}>10</option>
+          <option value={15}>15</option>
+          <option value={20}>20</option>
+          <option value={-1}>All</option>
+        </select>
+      </div>
+      <div className={styles.content}>
+        <div className={styles.tableHeader}>
           {columns.map((column) => (
-            <button
+            <TableHeaderCell
               key={column.key}
-              type="button"
-              className={styles.tableCell}
-              onClick={() => {
-                setClickedRowIndex(rowIndex);
-                onCellClick({ item, column });
-              }}
+              sorter={column.sorter}
+              order={sorter.column === column.key ? sorter.order : null}
+              onSort={(order) => handleSortChange({
+                order,
+                column: column.key,
+              })}
             >
-              {item[column.key] === null ? '-' : item[column.key]}
-            </button>
+              {column.title}
+            </TableHeaderCell>
           ))}
         </div>
-      )))}
-      <Pagination
-        totalItems={totalItems}
-        limit={limit}
-        initialLimit={initialLimit}
-        currentPage={page}
-        onPageChange={handlePageChange}
-        onLimitChange={handleLimitChange}
-      />
+
+        {isLoading && (
+          <div className={styles.placeholder}>
+            <span>Loading...</span>
+          </div>
+        )}
+
+        {(!isLoading && error) && (
+          <div className={classnames(styles.placeholder, styles.error)}>
+            <span>{error}</span>
+          </div>
+        )}
+
+        {(!isLoading && !error && !items.length) && (
+          <div className={styles.placeholder}>
+            <span>
+              There are no items
+            </span>
+          </div>
+        )}
+
+        {(!error && !isLoading) && (items.map((item, rowIndex) => (
+          <div
+            key={item[uniqueRowKey]}
+            className={classnames(styles.tableRow, rowIndex === clickedRowIndex && styles.tableRowClicked)}
+          >
+            {columns.map((column) => (
+              <button
+                key={column.key}
+                type="button"
+                className={styles.tableCell}
+                onClick={() => {
+                  setClickedRowIndex(rowIndex);
+                  onCellClick({ item, column });
+                }}
+              >
+                {item[column.key] === null ? '-' : item[column.key]}
+              </button>
+            ))}
+          </div>
+        )))}
+        <Pagination
+          totalItems={totalItems}
+          limit={limit}
+          currentPage={page}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </div>
   );
 };
@@ -119,7 +132,6 @@ Table.propTypes = {
   rowKey: PropTypes.string,
   isLoading: PropTypes.bool,
   limit: PropTypes.number,
-  initialLimit: PropTypes.number,
   totalItems: PropTypes.number.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   columns: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
@@ -133,7 +145,6 @@ Table.defaultProps = {
   rowKey: null,
   isLoading: false,
   limit: PAGE_LIMIT,
-  initialLimit: PAGE_LIMIT,
   onChange: () => null,
   onCellClick: () => null,
   onLimitChange: () => null,

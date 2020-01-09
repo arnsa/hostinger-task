@@ -25,7 +25,6 @@ export const App = () => {
       <Table
         {...usersRequest}
         limit={limit}
-        initialLimit={USERS_LIMIT}
         columns={[
           { key: 'firstName', title: 'First Name' },
           { key: 'lastName', title: 'Last Name' },

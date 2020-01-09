@@ -6,7 +6,6 @@ function getWrapper(props) {
   return shallow(
     <Pagination
       limit={25}
-      initialLimit={25}
       totalItems={100}
       currentPage={1}
       onPageChange={() => null}
@@ -18,6 +17,12 @@ function getWrapper(props) {
 describe('<Pagination />', () => {
   it('does not render if there are no pages', () => {
     const wrapper = getWrapper({ totalItems: 0 });
+
+    expect(wrapper.html()).toEqual(null);
+  });
+
+  it('does not render if limit is -1', () => {
+    const wrapper = getWrapper({ limit: -1 });
 
     expect(wrapper.html()).toEqual(null);
   });

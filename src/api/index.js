@@ -13,7 +13,7 @@ export function getUsers({
     setTimeout(() => {
       const users = [];
 
-      for (let i = 0; i < limit; i += 1) {
+      for (let i = 0; i < (limit === -1 ? USERS_LIMIT : limit); i += 1) {
         users.push({
           id: Math.random(),
           firstName: faker.name.firstName(),

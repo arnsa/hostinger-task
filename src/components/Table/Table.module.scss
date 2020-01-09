@@ -2,6 +2,24 @@
 .root {
   min-width: 350px;
   overflow: scroll;
+}
+
+.limit {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.limitSelect {
+  padding: 5px 15px 5px 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  appearance: none;
+  outline: none;
+  color: #ffffff;
+  background: url('../../assets/arrow-down.svg') 85% / 18% no-repeat #6751c1;
+}
+
+.content {
   box-shadow: 0px 4px 18px -4px rgba(0, 0, 0, 0.75);
 }
 
