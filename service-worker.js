@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hostinger-task/index.html/precache-manifest.88b644f2e78f41d9d39433ecfae4891a.js"
+  "/hostinger-task/index.html/precache-manifest.9b99d9b0ffe32a8921a1453e37643357.js"
 );
 
 self.addEventListener('message', (event) => {

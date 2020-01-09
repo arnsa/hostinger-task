@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3367027b21b3fb85329c2dedf439e61c",
+    "revision": "c9a22124e605a3610f9bff68543e3c26",
     "url": "/hostinger-task/index.html/index.html"
   },
   {
