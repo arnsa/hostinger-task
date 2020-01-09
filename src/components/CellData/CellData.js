@@ -18,7 +18,13 @@ export const CellData = ({ data, className }) => {
 };
 
 CellData.propTypes = {
-  data: PropTypes.shape({}),
+  data: PropTypes.shape({
+    column: PropTypes.shape({
+      key: PropTypes.string,
+      title: PropTypes.string,
+    }).isRequired,
+    item: PropTypes.shape({}).isRequired,
+  }),
   className: PropTypes.string,
 };
 
