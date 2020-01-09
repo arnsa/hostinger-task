@@ -27,19 +27,6 @@ describe('<Pagination />', () => {
     expect(wrapper.html()).toEqual(null);
   });
 
-  it('does not render pagination if showing all records', () => {
-    const wrapper = getWrapper();
-    const showAllBtn = wrapper.find('.showAll');
-
-    expect(wrapper.find('.showAll').text()).toEqual('Show all records');
-
-    showAllBtn.simulate('click');
-    wrapper.update();
-
-    expect(wrapper.find('.showAll').text()).toEqual('Hide all records');
-    expect(wrapper.find('.pages').length).toEqual(0);
-  });
-
   it('renders pagination if not showing all records', () => {
     const wrapper = getWrapper({});
 
