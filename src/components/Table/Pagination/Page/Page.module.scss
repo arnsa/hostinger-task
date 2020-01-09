@@ -12,6 +12,10 @@
     margin-right: 0;
   }
 
+  &.showAll {
+    margin: 10px auto 0;
+  }
+
   &.active {
     color: #fff;
     background-color: #6751c1;
