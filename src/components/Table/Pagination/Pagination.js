@@ -37,6 +37,7 @@ export const Pagination = ({
     } else {
       onLimitChange(totalItems);
     }
+
     setShowingAllRecords((showingAllRecords) => !showingAllRecords);
   };
 
