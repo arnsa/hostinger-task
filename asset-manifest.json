@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/hostinger-task/index.html/static/css/main.0cf4214a.chunk.css",
+    "main.js": "/hostinger-task/index.html/static/js/main.8a7c7ab4.chunk.js",
+    "main.js.map": "/hostinger-task/index.html/static/js/main.8a7c7ab4.chunk.js.map",
+    "runtime-main.js": "/hostinger-task/index.html/static/js/runtime-main.a7f4e6a5.js",
+    "runtime-main.js.map": "/hostinger-task/index.html/static/js/runtime-main.a7f4e6a5.js.map",
+    "static/js/2.5c47d65e.chunk.js": "/hostinger-task/index.html/static/js/2.5c47d65e.chunk.js",
+    "static/js/2.5c47d65e.chunk.js.map": "/hostinger-task/index.html/static/js/2.5c47d65e.chunk.js.map",
+    "index.html": "/hostinger-task/index.html/index.html",
+    "precache-manifest.88b644f2e78f41d9d39433ecfae4891a.js": "/hostinger-task/index.html/precache-manifest.88b644f2e78f41d9d39433ecfae4891a.js",
+    "service-worker.js": "/hostinger-task/index.html/service-worker.js",
+    "static/css/main.0cf4214a.chunk.css.map": "/hostinger-task/index.html/static/css/main.0cf4214a.chunk.css.map",
+    "static/js/2.5c47d65e.chunk.js.LICENSE": "/hostinger-task/index.html/static/js/2.5c47d65e.chunk.js.LICENSE",
+    "static/media/Table.module.scss": "/hostinger-task/index.html/static/media/arrow-down.b1c17e39.svg",
+    "static/media/arrow-up.a7254bd2.svg": "/hostinger-task/index.html/static/media/arrow-up.a7254bd2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a7f4e6a5.js",
+    "static/js/2.5c47d65e.chunk.js",
+    "static/css/main.0cf4214a.chunk.css",
+    "static/js/main.8a7c7ab4.chunk.js"
+  ]
+}
